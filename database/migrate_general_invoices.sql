@@ -1,0 +1,21 @@
+CREATE TABLE general_invoices (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    invoice_no VARCHAR(30) NOT NULL UNIQUE,
+    receiver VARCHAR(150) NOT NULL,
+    phone VARCHAR(50),
+    description VARCHAR(255) NOT NULL,
+    kg DECIMAL(10,2) NOT NULL DEFAULT 0,
+    rate DECIMAL(12,2) NOT NULL DEFAULT 0,
+    amount DECIMAL(12,2) NOT NULL,
+    issue_date DATE NOT NULL,
+    due_date DATE NOT NULL,
+    status ENUM('Draft','Issued','Paid','Overdue','Cancelled') NOT NULL DEFAULT 'Issued',
+    notes TEXT,
+    branch_id INT UNSIGNED NOT NULL,
+    created_by INT UNSIGNED NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (branch_id) REFERENCES branches(id),
+    FOREIGN KEY (created_by) REFERENCES users(id),
+    INDEX idx_general_invoice_branch (branch_id),
+    INDEX idx_general_invoice_due (due_date)
+) ENGINE=InnoDB;

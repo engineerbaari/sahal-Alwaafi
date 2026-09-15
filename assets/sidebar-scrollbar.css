@@ -1,0 +1,6 @@
+.sidebar-nav{scrollbar-width:thin;scrollbar-color:#3c7fba #0a2239;scrollbar-gutter:stable}
+.sidebar-nav::-webkit-scrollbar{width:7px}
+.sidebar-nav::-webkit-scrollbar-track{background:#081f35;border-radius:99px;margin:10px 0}
+.sidebar-nav::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#4695d8,#256eae);border:1px solid #0b2742;border-radius:99px}
+.sidebar-nav::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#65aff0,#3185cb)}
+.sidebar-nav::-webkit-scrollbar-corner{background:transparent}

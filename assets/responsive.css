@@ -1,0 +1,22 @@
+/* Layout safeguards for phones, tablets, and wide desktop screens. */
+@media (max-width: 991px){
+  .page{padding-left:0;padding-right:0}.page>.container-xl{max-width:100%;padding-inline:16px}
+  .card{border-radius:14px}.table-responsive{overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+@media (max-width: 575px){
+  .page{padding-top:74px}.page>.container-xl{padding-inline:12px}
+  h1.h3{font-size:1.35rem}.d-flex.justify-content-between{gap:.65rem}
+  .btn{min-height:40px}.modal-dialog{margin:.5rem}.modal-body,.modal-footer{padding:1rem}
+  .table{font-size:.82rem}.table td,.table th{padding:.7rem .55rem;white-space:nowrap}
+  .form-control,.form-select{min-height:44px}.card.p-3,.card.p-lg-4{padding:1rem!important}
+}
+
+/* Every data table remains readable without squeezing columns on small screens. */
+.table-responsive{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.table-responsive>.table{min-width:680px;margin-bottom:0}
+@media (min-width: 992px){.table-responsive>.table{min-width:100%}}
+@media (max-width:575px){
+  .table-responsive{border:1px solid #e3edf7;border-radius:12px;background:#fff}
+  .table-responsive>.table{min-width:640px}
+  .table-responsive:after{content:'← Swipe to see more →';display:block;padding:.45rem .7rem;color:#6b7d90;font-size:.72rem;text-align:center;background:#f6f9fc}
+}
